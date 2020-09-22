@@ -1,18 +1,18 @@
-//But : �crire un programme pour calculer le montant qu�un individu devra d�bourser pour faire un voyage dans une
-//		automobile lou�e.L�algorithme tient *compte du kilom�trage parcouru* et de la *dur�e du voyage* qui sont
-//		soumises par le requ�rant.
+//But : Écrire un programme pour calculer le montant qu’un individu devra débourser pour faire un voyage dans une
+//		automobile louée.L’algorithme tient *compte du kilométrage parcouru* et de la *durée du voyage* qui sont
+//		soumises par le requérant.
 //Nom : Mikael Lagasse
 //Date : 16 Septembre 2020
 
 /*		Notes
 
-		Co�t de la location de 45$ par jour et comprend 250 km gratuits par jour
+		Coût de la location de 45$ par jour et comprend 250 km gratuits par jour
 
-		La consommation du v�hicule est 7.6 litres aux 100 km	
+		La consommation du véhicule est 7.6 litres aux 100 km	
 
-		1 litre d�essence co�te 1.25$
+		1 litre d’essence coûte 1.25$
 
-		0.05$ du kilom�tre est exig� pour chaque kilom�tre suppl�mentaire.
+		0.05$ du kilomètre est exigé pour chaque kilomètre supplémentaire.
 
 */
 
@@ -20,6 +20,10 @@
 
 using namespace std;	//Parce que std:: , C'EST NON.
 
+
+
+
+// KM : La déclaration des variables en dehors du main, c'est NON !!!!
 int jours;				//Nombre de jours.
 float km;				//Distance du voyage calculer en Km.
 int kmG;				//Utiliser pour stocker le kilometrage qu'on aura gratuitement avec la location.
@@ -36,16 +40,22 @@ int main()
 		
 	cout << "Combien de jour souhaitez vous louez l'automobile en question : \n";
 	cin >> jours;		//L'utilisateur nous donne le nombre de jours qu'il veut louer l'automobile.
+	// KM : Il faudrait valider la valeur entrée
+	
+	
 	kmG = jours * 250;	//Kilometre Gratuits = Nombre de jours de location * 250km.
 	cout << "Le voyage en kilometrage : \n";
 	cin >> km;			//On demande la distance du voyage total.
+	// KM : Il faudrait valider la saisie
 	
-	//Ici , on veut verifier le total de kilometrage (plus grand ou plus petit) avec le kilometrage donner gratuitement lors de la location.
+	
+	//FR : Ici , on veut verifier le total de kilometrage (plus grand ou plus petit) avec le kilometrage donner gratuitement lors de la location.
 	//Car si le kilometrage gratuit est plus grand que le kilometrage du voyage , on lui fera pas payer de frais 
 	//et on va "skip" une partie du code , car on calculerait des 0 un peu partout sinon.
 	
 	if (km > kmG)		//Donc si le kilometrage total du voyage est plus grand que le kilometrage donner gratuitement :
 	{
+		// KM : C'est sûrement une belle présentation, mais je n'ai pas pu la voir
 		cout << "\nDonc.(Les kilometres gratuits par jours on ete soustrait du nombre de kilometre total.)\n";
 		cout << "\n------FACTURE-------" << endl;
 		cout << "  " << jours * prixLocation << " $   pour la location\n";		//Calcul du prix de la location (Nombre de jours * 45$).
@@ -62,7 +72,7 @@ int main()
 		cout << "\nDonc.\n";
 		cout << "\n------FACTURE-------" << endl;
 		cout << "  " << jours * prixLocation << " $   pour la location\n";		//Calcul du prix de la location (Nombre de jours * 45$).
-		cout << "         " << "Rien a payer pour le gaz , car on exc�de pas les " << 250 * jours << " Km gratuit.\n";		//On explique a l'utilisateur pourquoi il-n'y-a pas d'autre frais
+		cout << "         " << "Rien a payer pour le gaz , car on excéde pas les " << 250 * jours << " Km gratuit.\n";		//On explique a l'utilisateur pourquoi il-n'y-a pas d'autre frais
 		cout << "----------------------" << endl;
 		cout << " " << jours * prixLocation << " $    est donc le total du voyage en question.\n\n";		//total TOTAL (Tout les frais calculer ensembles).
 	}
@@ -96,4 +106,18 @@ Ensuite , "Prix du Litre * Consommation de l'automobile" nous donnera le total a
 Donc , 38l * 1.25$ = 47.5$ de gaz.
 
 Donc au TOTAL : 342.5$
+*/
+/*
+•	La solution est bien nommée et comporte un projet 						5 / 5
+•	Les fichiers sources contiennent l'identification complète du programme et de son auteur	5 / 5
+•	Le code source est sans erreur de compilation 							15 / 15
+•	Le programme est fonctionnel 15 / 20				// KM : Valider les saisies
+•	Le programme passe le plan de tests 15 / 20			// KM : Manque valeurs improbables
+•	Le code source est largement commenté 20 / 20
+•	La solution est déposée dans LEA et dans GitHub.L'adresse est envoyée via Outlook	15/15
+
+
+
+Note 90 / 100
+Quel beau travail !!! Le code est bien structuré et commenté
 */
